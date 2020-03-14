@@ -9,8 +9,10 @@
 
 const findBestEmployee = function(employees) {
   const values = Object.values(employees);
-  const max = Math.max(...values);
   console.log(values);
+  const max = Math.max(...values);
+  console.log(max);
+  
   for (const key in employees) {
     if (employees[key] === max) {
       console.log(key);
