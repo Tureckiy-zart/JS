@@ -11,10 +11,14 @@
 // 3. посчитать цену
 
 const calculateEngravingPrice = function(message, pricePerWord) {
-  const words = message.split(" ");
-  //   console.log(words);
-  const tootalPrice = words.length * pricePerWord;
-  return tootalPrice;
+  // const words = message.split(" ");
+  // const tootalPrice = words.length * pricePerWord;
+  // return tootalPrice;
+  //ALTERNATIVE
+  const calculateEngravingPrice = function(message, pricePerWord) {
+    const words = message.split(' ');
+    return `цена гравировки: ${words.length* pricePerWord}`
+  };
 };
 
 console.log(

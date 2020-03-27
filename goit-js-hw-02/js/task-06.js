@@ -38,5 +38,9 @@ let total = 0;
 for (const number of numbers) {
     total += Number(number);
 }
-numbers.pop();
 console.log(`The total amount of numbers entered equals to ${total}`);
+  
+
+
+
+console.log(1 2 2 3 3 33 3  56 );

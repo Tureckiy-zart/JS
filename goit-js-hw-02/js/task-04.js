@@ -27,18 +27,29 @@
 //   return string;
 // };
 
-const formatString = string => {
-  let stringLength = string.length;
+// const formatString = string => {
+  // let stringLength = string.length;
 
-  if (stringLength < 40) {
-  } else {
-    const stringArr = function(...string) {
-      string = stringArr.splice(0, 40); // удалить первые 40 символов
-      string = string.join("");
-    }; //преoбразовать в псевдомассив
-    // console.log(stringArr);
+  // if (stringLength < 40) {
+  // } else {
+  //   const stringArr = function(...string) {
+  //     string = stringArr.splice(0, 40); // удалить первые 40 символов
+  //     string = string.join("");
+  //   }; //преoбразовать в псевдомассив
+  //   // console.log(stringArr);
+  // }
+  // return string;
+// };
+
+//НОРМАЛЬНЫЙ ВАРИАНТ
+
+const formatString = function(string) {
+  if (string.length>40){
+  let newString = string.slice(0, 40);
+  return  newString;
+  } else{ 
+    return string;
   }
-  return string;
 };
 /*
 //  * Вызовы функции для проверки работоспособности твоей реализации.
@@ -55,11 +66,6 @@ console.log(formatString("Curabitur ligula sapien."));
 console.log(
   formatString(
     "Nunc sed turpis. Curabitur a felis in nunc fringilla tristique."
-  )
-);
-console.log(
-  formatString(
-    "ХУЙ__ХУЙ!!!! Nunc sed turpis. Curabitur a felis in nunc fringilla tristique."
   )
 );
 // // вернется форматированная строка

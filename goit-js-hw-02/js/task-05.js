@@ -13,7 +13,7 @@ const checkForSpam = message => {
   //1. привести в нижний регистр 2. разделить по пробелу
   let isSpam;
 
-  for (let i = 0; i < aletWords.length; i++) {
+  // for (let i = 0; i < aletWords.length; i++) {
     //перебрали массив
     for (const word in strArray) {
       const includesSpam = strArray[word].includes(aletWords[i]);
@@ -24,7 +24,7 @@ const checkForSpam = message => {
       } else {
         isSpam = false;
       }
-    }
+    // }
   }
   return isSpam;
 };
