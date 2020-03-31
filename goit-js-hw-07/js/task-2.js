@@ -13,30 +13,31 @@ const ingredients = [
 // после чего вставит все li за одну операцию
 // в список ul.ingredients. Для создания DOM-узлов
 // используй document.createElement().
+// ============================var1================================================================
+{
+  const ingredientsGet = document.getElementById("ingredients");
 
-const ingredientsGet = document.getElementById("ingredients");
+  const fragment = document.createDocumentFragment();
 
-const fragment = document.createDocumentFragment();
-
-for (const ingredient of ingredients) {
-  let addLi = document.createElement("li");
-  addLi.textContent = ingredient;
-  fragment.append(ingredient);
+  for (const ingredient of ingredients) {
+    let addLi = document.createElement("li");
+    addLi.textContent = ingredient;
+    fragment.append(ingredient);
+  }
+  ingredientsGet.append(fragment);
+  console.log(ingredientsGet);
 }
-
-
-// console.log(fragment);
-
-ingredientsGet.append(fragment);
-console.log(ingredientsGet);
-
-
-
-
-
-
-// ingredients.forEach(function(ingredient) {
-//   let addLi = document.createElement("li");
-//     addLi.textContent = ingredient;
-//     fragment.append(ingredient);
-// });
+// ============================var2================================================================
+{
+  const list2 = document.querySelector("#ingredients");
+  const fragment = document.createDocumentFragment();
+  function makeList(params) {
+    const newLi = ingredients.forEach(item => {
+      const addLi = document.createElement("li");
+      addLi.textContent = item;
+      fragment.append(addLi);
+    });
+    return list2.append(fragment);
+  }
+  makeList(ingredients);
+}

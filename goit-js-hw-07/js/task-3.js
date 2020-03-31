@@ -24,19 +24,14 @@ const images = [
   }
 ];
 
-const gallery = document.querySelector("#gallery");
+const list3 = document.querySelector("#gallery");
 
-function createGal(array) {
-  const newArr = array.map(image => {
-    const newImg = `<li><img class="some-class" url="${images.url}" alt="${images.alt}"></li>`;
-    return newImg;
+function makeGallery(array) {
+  const newArr = array.map(item => {
+    const newLi = `<li><img src="${item.url}" alt="${item.alt}" width = 300 > </li>`;
+    return newLi;
   });
-  gallery.insertAdjacentHTML("afterbegin", newArr);
+  gallery.insertAdjacentHTML("afterbegin", [...newArr].join("")); ///[...newArr].join("") = убрать запятую тк insertAdjacentHTML выводит как строку
 }
-createGal(images);
-// const fragment =  document.createDocumentFragment()
 
-// images.forEach(){
-//   const cresteImg = document.createElement("li");
-
-// }
+makeGallery(images);
