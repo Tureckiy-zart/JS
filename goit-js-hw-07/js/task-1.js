@@ -1,23 +1,29 @@
 ("use strict");
-// Посчитает и выведет в консоль количество категорий 
-                                      // в ul#categories, то есть элементов li.item. Получится 
-                                      // 'В списке 3 категории.'.
+// Посчитает и выведет в консоль количество категорий
+// в ul#categories, то есть элементов li.item. Получится
+// 'В списке 3 категории.'.
 //
-// (тега h2) и количество элементов в категории (всех 
-//   вложенных в него элементов li).
+// (тега h2) и количество элементов в категории (всех
+// вложенных в него элементов li).
 // Например для первой категории получится:
 // Категория: Животные
 // Количество элементов: 4
-// const mainList = document.getElementById('categories')
-// const arrLi = mainList.querySelectorAll('.item')
+// =============================================07-01==========================================
 
-const list = [...document.querySelectorAll('.item')]
-console.log(`В списке ${list.length} категории`);
-
-//  Для каждого элемента li.item в списке ul#categories, 
-// найдет и выведет в консоль текст заголовка элемента 
-
-// console.dir(arrLi[0]);
-
-
-
+const item = document.querySelectorAll(".item");
+function lengthCount(toCoutn) {
+  return console.log(`В списке ${toCoutn.length} категории`);
+}
+lengthCount(item);
+// =======================================================================================
+function getCategory(item) {
+  const category = item.forEach(item => {
+    const innerContentUl = item.firstElementChild.textContent;
+    const allLength = item.querySelector("ul").querySelectorAll("li").length;
+    return console.log(
+      `Категория ${innerContentUl} содержит ${allLength} элемента`
+    );
+  });
+}
+getCategory(item);
+// =======================================================================================
